@@ -53,7 +53,8 @@ class KaKaoMap extends Component {
     }
 
     getData() {
-        var url = 'http://localhost:4000/openapi/getdata?keyword=' + this.state.keyword + '&pageNo=' + this.state.pageNo;;
+    // var url = 'http://localhost:4000/openapi/getdata?keyword=' + this.state.keyword + '&pageNo=' + this.state.pageNo;;
+		var url = 'https://express-server44.run.goorm.io/openapi/getdata?keyword=' + this.state.keyword + '&pageNo=' + this.state.pageNo;;
         fetch(url, { method: 'get' }) //체인방식으로 실행. 장점은 줄 순서대로 각각 실행 결과가 마무리 된 후 다음 줄이 실행 된다.
             .then(response => response.json()) //응답데이터를 json 형태로 변환
             .then(contents => { //json으로 변환된 응답데이터인 contents 를 가지고 구현하는 내용
